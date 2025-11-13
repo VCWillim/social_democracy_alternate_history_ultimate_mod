@@ -1,31 +1,18 @@
-id: ebert_death_1925
+id: test_fire
 is-event: true
 
-# This is the 'trigger'. It fires in March 1925.
+# This fires on the 2nd month (Feb 1925)
 view-if:
-    Q.year == 1925
-    Q.month == 3
-    Q.president = "Ebert"
+    Q.time == 2
+    not Q.test_fire_seen
 
-# This is the title of the event
-title: President Ebert is Dead
-# This is the description text
+title: TEST IS WORKING
 text:
-    Our comrade and the first President of the Republic, Friedrich Ebert, has died suddenly. The nation is in mourning.
+    The game is successfully loading this event file.
 
-    A new presidential election must be held. This is a critical moment for the Republic, and for our party.
-
-# This runs as soon as the event appears
 on-arrival:
-    # This ensures the event doesn't appear again
-    Q.ebert_death_1925_seen = true
+    Q.test_fire_seen = true
 
-# --- CHOICES ---
 choices:
-    - text: A terrible loss for the SPD and for Germany.
-      # This code runs when you select the choice
-      on-arrival:
-          # This sets up the next historical event
-          Q.president = "None"
-      # Go back to the main game screen
+    - text: Continue
       go-to: root
