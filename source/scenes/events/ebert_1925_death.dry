@@ -1,10 +1,8 @@
-# This is the scene's ID
 id: ebert_death_1925
-# This makes it an "Event"
 is-event: true
 
 # This is the 'trigger'. It will only show if:
-# 1. The player hasn't seen it (Q.ebert_death_1925_seen == false)
+# 1. The player hasn't seen it (not Q.ebert_death_1925_seen)
 # 2. The date is on or after Feb 28, 1925
 # 3. The president is still Ebert (so it doesn't fire if he's already gone)
 view-if:
@@ -20,9 +18,9 @@ text:
 
     A new presidential election must be held. This is a critical moment for the Republic, and for our party.
 
-# This runs as soon as the card appears
+# This runs as soon as the event appears
 on-arrival:
-    # This ensures the card doesn't appear again
+    # This ensures the event doesn't appear again
     Q.ebert_death_1925_seen = true
 
 # --- CHOICES ---
