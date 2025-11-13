@@ -8,7 +8,7 @@ is-event: true
 # 2. The date is on or after Feb 28, 1925
 # 3. The president is still Ebert (so it doesn't fire if he's already gone)
 view-if:
-    Q.ebert_death_1925_seen == false
+    not Q.ebert_death_1925_seen
     Q.current_date >= "1925-02-28"
     Q.president == "Ebert"
 
