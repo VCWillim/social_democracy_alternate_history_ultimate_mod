@@ -3,10 +3,9 @@ is-event: true
 
 # This is the 'trigger'. It fires in March 1925.
 view-if:
-    not Q.ebert_death_1925_seen
     Q.year == 1925
-    Q.month >= 3
-    Q.president == "Ebert"
+    Q.month == 3
+    Q.president = "Ebert"
 
 # This is the title of the event
 title: President Ebert is Dead
