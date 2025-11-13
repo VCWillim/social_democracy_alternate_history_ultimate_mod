@@ -1,13 +1,11 @@
 id: ebert_death_1925
 is-event: true
 
-# This is the 'trigger'. It will only show if:
-# 1. The player hasn't seen it (not Q.ebert_death_1925_seen)
-# 2. The date is on or after Feb 28, 1925
-# 3. The president is still Ebert (so it doesn't fire if he's already gone)
+# This is the 'trigger'. It fires in March 1925.
 view-if:
     not Q.ebert_death_1925_seen
-    Q.current_date >= "1925-02-28"
+    Q.year == 1925
+    Q.month >= 3
     Q.president == "Ebert"
 
 # This is the title of the event
