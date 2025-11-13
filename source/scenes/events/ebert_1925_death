@@ -1,7 +1,7 @@
 # This is the scene's ID
 id: ebert_death_1925
-# This makes it a "Card"
-is-card: true
+# This makes it an "Event"
+is-event: true
 
 # This is the 'trigger'. It will only show if:
 # 1. The player hasn't seen it (Q.ebert_death_1925_seen == false)
@@ -12,7 +12,7 @@ view-if:
     Q.current_date >= "1925-02-28"
     Q.president == "Ebert"
 
-# This is the title of the card
+# This is the title of the event
 title: President Ebert is Dead
 # This is the description text
 text:
