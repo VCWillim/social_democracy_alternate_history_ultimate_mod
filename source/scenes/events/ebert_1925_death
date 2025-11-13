@@ -1,0 +1,36 @@
+# This is the scene's ID
+id: ebert_death_1925
+# This makes it a "Card"
+is-card: true
+
+# This is the 'trigger'. It will only show if:
+# 1. The player hasn't seen it (Q.ebert_death_1925_seen == false)
+# 2. The date is on or after Feb 28, 1925
+# 3. The president is still Ebert (so it doesn't fire if he's already gone)
+view-if:
+    Q.ebert_death_1925_seen == false
+    Q.current_date >= "1925-02-28"
+    Q.president == "Ebert"
+
+# This is the title of the card
+title: President Ebert is Dead
+# This is the description text
+text:
+    Our comrade and the first President of the Republic, Friedrich Ebert, has died suddenly. The nation is in mourning.
+
+    A new presidential election must be held. This is a critical moment for the Republic, and for our party.
+
+# This runs as soon as the card appears
+on-arrival:
+    # This ensures the card doesn't appear again
+    Q.ebert_death_1925_seen = true
+
+# --- CHOICES ---
+choices:
+    - text: A terrible loss for the SPD and for Germany.
+      # This code runs when you select the choice
+      on-arrival:
+          # This sets up the next historical event
+          Q.president = "None"
+      # Go back to the main game screen
+      go-to: root
